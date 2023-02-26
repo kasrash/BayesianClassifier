@@ -89,8 +89,8 @@ def db_plot(dataset, dataset_slicer, hp, fignum, plot_path, hp2=None):
         plt.plt.contour(hp2[1], hp2[2], hp2[0], levels=[0], colors='g', linewidths=3)  # decision boundary is where hp is zero
         plt.plot([],[],'g',label="Decision Boundary #2", lw=3)
     plt.legend(loc=1)
-    # plt.xlim(np.max(hp[1])+1)
-    # plt.ylim(np.max(hp[2])+1)
+    plt.xlim(np.min(hp[1]), np.max(hp[1])+1)
+    plt.ylim(np.min(hp[2]), np.max(hp[2])+1)
     plt.savefig(plot_path+'\decisionbound.png', dpi=600)
 
 def conf_matrix_plot(conf_matrix, fignum, plot_path, labels=[1,2], normalize=False):
